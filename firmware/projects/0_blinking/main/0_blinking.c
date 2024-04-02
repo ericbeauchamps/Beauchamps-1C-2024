@@ -17,9 +17,9 @@
 /*==================[inclusions]=============================================*/
 #include <stdio.h>
 #include <stdint.h>
+#include "led.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "led.h"
 /*==================[macros and definitions]=================================*/
 #define CONFIG_BLINK_PERIOD 100
 /*==================[internal data definition]===============================*/

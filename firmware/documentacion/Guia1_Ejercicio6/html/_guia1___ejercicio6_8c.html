@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Guia 1 - Ejercicio 6: Referencia del archivo C:/Repositorio/Beauchamps-1C-2024/firmware/projects/Guia1_Ejercicio6/main/Guia1_Ejercicio6.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="index.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Guia 1 - Ejercicio 6
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_guia1___ejercicio6_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Guia1_Ejercicio6.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;gpio_mcu.h&quot;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+</div>
+<p><a href="_guia1___ejercicio6_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgpio_conf__t.html">gpioConf_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3df1b4cad09974bfc68858fad7cdc054" id="r_a3df1b4cad09974bfc68858fad7cdc054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a>&#160;&#160;&#160;500</td></tr>
+<tr class="memdesc:a3df1b4cad09974bfc68858fad7cdc054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor de tiempo que permanece encendido el buzer.  <br /></td></tr>
+<tr class="separator:a3df1b4cad09974bfc68858fad7cdc054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a47991fc9654895a984a8b00ebc937ba7" id="r_a47991fc9654895a984a8b00ebc937ba7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47991fc9654895a984a8b00ebc937ba7">ConvertToBcdArray</a> (uint32_t data, uint8_t digits, uint8_t *bcd_number)</td></tr>
+<tr class="memdesc:a47991fc9654895a984a8b00ebc937ba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codifica de decimal a BCD.  <br /></td></tr>
+<tr class="separator:a47991fc9654895a984a8b00ebc937ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a572dabc231aca8e59ede4e88e9c8a2bf" id="r_a572dabc231aca8e59ede4e88e9c8a2bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572dabc231aca8e59ede4e88e9c8a2bf">ManipularEstadoPinCodificacion</a> (uint BCD, <a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *Pines)</td></tr>
+<tr class="memdesc:a572dabc231aca8e59ede4e88e9c8a2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite manipular el estado de los pines para la codificacion.  <br /></td></tr>
+<tr class="separator:a572dabc231aca8e59ede4e88e9c8a2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9ea18417bea389ff5ec3075864f59b" id="r_a4a9ea18417bea389ff5ec3075864f59b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a9ea18417bea389ff5ec3075864f59b">ManipularDisplayLCD</a> (uint32_t data, uint8_t digits, <a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *PinesCodificacion, <a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *PinesDigitos, uint8_t *bcd_number)</td></tr>
+<tr class="memdesc:a4a9ea18417bea389ff5ec3075864f59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite visualizar en el display LCD los números elegidos por el usuario.  <br /></td></tr>
+<tr class="separator:a4a9ea18417bea389ff5ec3075864f59b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a3df1b4cad09974bfc68858fad7cdc054" name="a3df1b4cad09974bfc68858fad7cdc054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b4cad09974bfc68858fad7cdc054">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor de tiempo que permanece encendido el buzer. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia1___ejercicio6_8c_source.html#l00046">46</a> del archivo <a class="el" href="_guia1___ejercicio6_8c_source.html">Guia1_Ejercicio6.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia1___ejercicio6_8c_source.html#l00130">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_guia1___ejercicio6_8c_source.html#l00130">130</a> del archivo <a class="el" href="_guia1___ejercicio6_8c_source.html">Guia1_Ejercicio6.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia1___ejercicio6_8c_source.html#l00046">CONFIG_BLINK_PERIOD</a>, <a class="el" href="_guia1___ejercicio6_8c_source.html#l00054">gpioConf_t::dir</a>, <a class="el" href="_guia1___ejercicio6_8c_source.html#l00111">ManipularDisplayLCD()</a> y <a class="el" href="_guia1___ejercicio6_8c_source.html#l00053">gpioConf_t::pin</a>.</p>
+
+</div>
+</div>
+<a id="a47991fc9654895a984a8b00ebc937ba7" name="a47991fc9654895a984a8b00ebc937ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47991fc9654895a984a8b00ebc937ba7">&#9670;&#160;</a></span>ConvertToBcdArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConvertToBcdArray </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>digits</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bcd_number</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codifica de decimal a BCD. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dato decimal de 32 bits. </td></tr>
+    <tr><td class="paramname">digits</td><td>Cantidad de digitos a codificar. </td></tr>
+    <tr><td class="paramname">bcd_number</td><td>Puntero de un vector que almacena los datos una vez que han sido codificados. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia1___ejercicio6_8c_source.html#l00064">64</a> del archivo <a class="el" href="_guia1___ejercicio6_8c_source.html">Guia1_Ejercicio6.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia1___ejercicio6_8c_source.html#l00111">ManipularDisplayLCD()</a>.</p>
+
+</div>
+</div>
+<a id="a4a9ea18417bea389ff5ec3075864f59b" name="a4a9ea18417bea389ff5ec3075864f59b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a9ea18417bea389ff5ec3075864f59b">&#9670;&#160;</a></span>ManipularDisplayLCD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManipularDisplayLCD </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>digits</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *</td>          <td class="paramname"><span class="paramname"><em>PinesCodificacion</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *</td>          <td class="paramname"><span class="paramname"><em>PinesDigitos</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bcd_number</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permite visualizar en el display LCD los números elegidos por el usuario. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Dato decimal de 32 bits. </td></tr>
+    <tr><td class="paramname">digits</td><td>Cantidad de digitos a codificar. </td></tr>
+    <tr><td class="paramname">bcd_number</td><td>Puntero de un vector que almacena los datos una vez que han sido codificados. </td></tr>
+    <tr><td class="paramname">PinesCodificacion</td><td>Puntero de un vector que almacena los pines del numero que se desea mostrar. </td></tr>
+    <tr><td class="paramname">PinesDigitos</td><td>Puntero de un vector que almacena los pines del digito que se desea mostrar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia1___ejercicio6_8c_source.html#l00111">111</a> del archivo <a class="el" href="_guia1___ejercicio6_8c_source.html">Guia1_Ejercicio6.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_guia1___ejercicio6_8c_source.html#l00064">ConvertToBcdArray()</a> y <a class="el" href="_guia1___ejercicio6_8c_source.html#l00081">ManipularEstadoPinCodificacion()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia1___ejercicio6_8c_source.html#l00130">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a572dabc231aca8e59ede4e88e9c8a2bf" name="a572dabc231aca8e59ede4e88e9c8a2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a572dabc231aca8e59ede4e88e9c8a2bf">&#9670;&#160;</a></span>ManipularEstadoPinCodificacion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ManipularEstadoPinCodificacion </td>
+          <td>(</td>
+          <td class="paramtype">uint</td>          <td class="paramname"><span class="paramname"><em>BCD</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgpio_conf__t.html">gpioConf_t</a> *</td>          <td class="paramname"><span class="paramname"><em>Pines</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permite manipular el estado de los pines para la codificacion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">BCD</td><td>Dato decimal ya codificado que se desea mostrar. </td></tr>
+    <tr><td class="paramname">Pines</td><td>Puntero que almacena los pines del numero que se desea mostrar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_guia1___ejercicio6_8c_source.html#l00081">81</a> del archivo <a class="el" href="_guia1___ejercicio6_8c_source.html">Guia1_Ejercicio6.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_guia1___ejercicio6_8c_source.html#l00111">ManipularDisplayLCD()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_840ce7523b0932d5abaf1b926f8f4cf5.html">Repositorio</a></li><li class="navelem"><a class="el" href="dir_cdd32e85384b092bba3ed1c26175bc2a.html">Beauchamps-1C-2024</a></li><li class="navelem"><a class="el" href="dir_a00c5a9728ad2f261de4b5b52be0d6f8.html">firmware</a></li><li class="navelem"><a class="el" href="dir_2fbcd39729f371cd7b942683335bcdd4.html">projects</a></li><li class="navelem"><a class="el" href="dir_9c068e9a2a870cfa8e340e7a0ff02547.html">Guia1_Ejercicio6</a></li><li class="navelem"><a class="el" href="dir_70eabc60a683d8e0925120340c658a70.html">main</a></li><li class="navelem"><a class="el" href="_guia1___ejercicio6_8c.html">Guia1_Ejercicio6.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
