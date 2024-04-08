@@ -22,8 +22,8 @@
 #include "freertos/task.h"
 #include "led.h"
 /*==================[macros and definitions]=================================*/
-#define CONFIG_BLINK_PERIOD_LED_1 1000
-#define CONFIG_BLINK_PERIOD_LED_2 1500
+#define CONFIG_BLINK_PERIOD_LED_1 500
+#define CONFIG_BLINK_PERIOD_LED_2 500
 #define CONFIG_BLINK_PERIOD_LED_3 500
 /*==================[internal data definition]===============================*/
 TaskHandle_t led1_task_handle = NULL;
