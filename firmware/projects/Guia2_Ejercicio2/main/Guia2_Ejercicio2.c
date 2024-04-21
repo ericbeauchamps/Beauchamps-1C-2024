@@ -195,7 +195,6 @@ void FuncTimerA(void* param)
 /*==================[external functions definition]==========================*/
 void app_main(void)
 {
-
 	/*Actividad 2 - Proyecto: Medidor de distancia por ultrasonido c/interrupciones
 	Modifique la actividad del punto 1 de manera de utilizar interrupciones para el 
 	control de las teclas y el control de tiempos (Timers). 
