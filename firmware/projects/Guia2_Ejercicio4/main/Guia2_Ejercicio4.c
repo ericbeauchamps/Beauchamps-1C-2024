@@ -17,7 +17,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 19/04/2024| Document creation		                         |
+ * | 19/04/2024 | Creación del documento		                 |
  *
  * @author Eric Beauchamps (beauchampseric97@gmail.com)
  *
@@ -48,10 +48,10 @@ void Conversion()
 {
 	uint16_t valor;
 
-	AnalogStartContinuous(CH1);
+	AnalogStartContinuous(CH1); //Comienza la lectura analogica continua
 	AnalogInputReadContinuous(CH1,&valor); //Leo el valor analogico
 	UartSendString(UART_PC,(const char*) UartItoa(valor,10)); //Envio el dato convertido a ASCII
-	UartSendString(UART_PC, "\r");
+	UartSendString(UART_PC, "11,\r");
 }
 
 void FuncionTimer(void *param)
