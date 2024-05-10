@@ -2,7 +2,7 @@
  *
  * @section genDesc General Description
  *
- * La aplicación permite digitalizar una señal analógica, transmitirla a un osciloscopio de PC y 
+ * La aplicación permite digitalizar una señal analógica, transmitirla a un osciloscopio de PC y
  * convertir una señal digital de ECG a analógica para visualizarla en el osciloscopio.
  *
  * @section hardConn Hardware Connection
@@ -42,18 +42,18 @@
  */
 #define PERIODO_MUESTREO_AD 2000
 
-//#define PERIODO_MUESTREO_DA 4000
+// #define PERIODO_MUESTREO_DA 4000
 
 /** @def BUFFER_SIZE
  *  @brief Cantidad de muestras que contiene el vector ecg.
  */
 #define BUFFER_SIZE 231
 /*==================[internal data definition]===============================*/
-//bool convertir_AD = false;
+// bool convertir_AD = false;
 
 int PERIODO_MUESTREO_DA = 4000;
 
-TaskHandle_t conversion_AD_handle; //etiqueta
+TaskHandle_t conversion_AD_handle; // etiqueta
 TaskHandle_t conversion_DA_handle;
 
 const char ecg[BUFFER_SIZE] = {
@@ -290,9 +290,11 @@ const char ecg[BUFFER_SIZE] = {
 	76,
 };
 
+timer_config_t timer_conversion_DA;
+
 /*==================[internal functions declaration]=========================*/
 
-/** 
+/**
  * @brief Permite la conversión digital - analogica
  */
 void ConversionDA()
@@ -302,16 +304,19 @@ void ConversionDA()
 
 	while (1)
 	{
+		TimerStop(TIMER_B);
+		timer_conversion_DA.period = PERIODO_MUESTREO_DA;
+		TimerInit(&timer_conversion_DA);
+		TimerStart(TIMER_B);
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 		AnalogOutputWrite(ecg[i]);
 		i++;
 
-		if(i == sizeof(ecg))
+		if (i == sizeof(ecg))
 		{
-			i=0;
+			i = 0;
 		}
 	}
-
 }
 
 /**
@@ -322,7 +327,7 @@ void TimerDAC(void *param)
 	vTaskNotifyGiveFromISR(conversion_DA_handle, pdFALSE);
 }
 
-/** 
+/**
  * @brief Permite la conversión analogica - digital
  */
 void ConversionAD()
@@ -344,10 +349,10 @@ void ConversionAD()
  */
 void TimerADC(void *param)
 {
-	vTaskNotifyGiveFromISR(conversion_AD_handle, pdFALSE); /* Envía una notificación a la tarea asociada. No siemrpe es necesaria*/														  
+	vTaskNotifyGiveFromISR(conversion_AD_handle, pdFALSE); /* Envía una notificación a la tarea asociada. No siemrpe es necesaria*/
 }
 
-/** 
+/**
  * @brief Permite leer el estado de los switches.
  */
 void LeerSwitch(void)
@@ -359,11 +364,11 @@ void LeerSwitch(void)
 	switch (switch_actual)
 	{
 	case SWITCH_1:
-		PERIODO_MUESTREO_DA = PERIODO_MUESTREO_DA + 100;
+		PERIODO_MUESTREO_DA = PERIODO_MUESTREO_DA + 1000;
 		break;
 
 	case SWITCH_2:
-		PERIODO_MUESTREO_DA = PERIODO_MUESTREO_DA - 100;
+		PERIODO_MUESTREO_DA = PERIODO_MUESTREO_DA - 1000;
 		break;
 	}
 }
@@ -422,7 +427,7 @@ void app_main(void)
 	AnalogInputInit(&mi_analogico);
 
 	/*Interrupciones para la lectura de los switch*/
-	SwitchActivInt(SWITCH_1, &LeerSwitch, NULL); 
+	SwitchActivInt(SWITCH_1, &LeerSwitch, NULL);
 	SwitchActivInt(SWITCH_2, &LeerSwitch, NULL);
 
 	/*Configuro e inicializo el timer para la conversion analogica - digital*/
@@ -434,11 +439,10 @@ void app_main(void)
 	TimerInit(&timer_conversion_AD);
 
 	/*Configuro e inicializo el timer para la conversion digital - analogica*/
-	timer_config_t timer_conversion_DA = {
-		.timer = TIMER_B,
-		.period = PERIODO_MUESTREO_DA,
-		.func_p = TimerDAC,
-		.param_p = NULL};
+	timer_conversion_DA.timer = TIMER_B;
+	timer_conversion_DA.period = PERIODO_MUESTREO_DA;
+	timer_conversion_DA.func_p = TimerDAC;
+	timer_conversion_DA.param_p = NULL;
 	TimerInit(&timer_conversion_DA);
 
 	/*Creo la tarea para la conversion analogica - digital*/
