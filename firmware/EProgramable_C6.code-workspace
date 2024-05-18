@@ -13,6 +13,9 @@
             "path": "projects/2_blinking_tasks"
         },
         {
+            "path": "projects/3_blinking_timer"
+        },
+        {
             "path": "./projects/x_template"
         },
         {
@@ -41,6 +44,9 @@
         },
         {
             "path": "projects/Guia2_Ejercicio4"
+        },
+        {
+            "path": "projects/ProyectoIntegrador"
         }
     ],
     "settings": {
@@ -96,7 +102,9 @@
             "soc_caps.h": "c",
             "mpu6050.h": "c",
             "i2c_mcu.h": "c",
-            "stdio.h": "c"
+            "nvs_flash.h": "c",
+            "esp_log.h": "c",
+            "ble_mcu.h": "c"
         },
     },
     "tasks": {
