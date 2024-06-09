@@ -104,7 +104,9 @@
             "i2c_mcu.h": "c",
             "nvs_flash.h": "c",
             "esp_log.h": "c",
-            "ble_mcu.h": "c"
+            "ble_mcu.h": "c",
+            "adxl335.h": "c",
+            "functional": "c"
         },
     },
     "tasks": {

@@ -27,6 +27,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <math.h>
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -37,6 +38,7 @@
 #include "delay_mcu.h"
 #include "uart_mcu.h"
 #include "analog_io_mcu.h"
+#include "ADXL335.h"
 
 /*==================[macros and definitions]=================================*/
 #define CONFIG_BLINK_PERIOD 500
@@ -45,11 +47,11 @@
 /** @def PERIODO_MUESTREO_AD
  *  @brief Valor de tiempo (en microsegundos) de muestreo para la conversion de analogico a digital.
  */
-#define PERIODO_MUESTREO_AD 2000
+#define PERIODO_MUESTREO_AD 20000
 
 #define ANGULO_MINIMO 0
 #define ANGULO_MAXIMO 150
-#define VALOR_MINIMO 470
+#define VALOR_MINIMO 735
 #define VALOR_MAXIMO 2535
 /*==================[internal data definition]===============================*/
 volatile bool bt_conectado = false;
@@ -77,7 +79,7 @@ void read_data(uint8_t *data, uint8_t length)
 	}
 }
 // 150 ° - 2535
-// 0 ° - 497
+// 0 ° - 735
 /**
  * @brief Permite la conversión analogica - digital
  */
@@ -88,10 +90,19 @@ void ConversionAD()
 		ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
 		AnalogInputReadSingle(CH1, &valor_medido);
-		// UartSendString(UART_PC, (const char *)UartItoa(angulo_medido, 10)); // Envio el dato convertido a ASCII
-		// UartSendString(UART_PC, "\n\r");
+
+		if(valor_medido < VALOR_MINIMO)
+		{
+			valor_medido = VALOR_MINIMO;
+		}
+
+		if(valor_medido > VALOR_MAXIMO)
+		{
+			valor_medido = VALOR_MAXIMO;
+		}
+		
 		angulo_medido = ANGULO_MINIMO + (valor_medido - VALOR_MINIMO)*(ANGULO_MAXIMO - ANGULO_MINIMO) / (VALOR_MAXIMO - VALOR_MINIMO);
-			//out = (in - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
+			
 	}
 }
 
@@ -114,24 +125,23 @@ void Visualizacion()
 			valor_minimo = valor_medido;
 			angulo_minimo = angulo_medido;
 		}
-
+		UartSendString(UART_PC, "Valor en bits: ");
 		UartSendString(UART_PC, (const char *)UartItoa(valor_medido, 10)); // Envio el dato convertido a ASCII
 		UartSendString(UART_PC, "\n\r");
-		// sprintf(msg, "R: %d, G: %d, B: %d\n", red, green, blue);
+		UartSendString(UART_PC, "Angulo: ");
 		UartSendString(UART_PC, (const char *)UartItoa(angulo_medido, 10)); // Envio el dato convertido a ASCII
 		UartSendString(UART_PC, "\n\r");
 
 		sprintf(msg, "*D%u\n*", angulo_medido);
 		BleSendString(msg);
-		
+
 		sprintf(msg, "*M%u\n*", angulo_minimo);
 		BleSendString(msg);
-		
+
 		sprintf(msg, "*P%u\n*", angulo_maximo);
 		BleSendString(msg);
 	}
 }
-
 /**
  * @brief Función invocada en la interrupción del timer A
  */
@@ -147,12 +157,15 @@ void TimerADC(void *param)
 /*==================[external functions definition]==========================*/
 void app_main(void)
 {
+	/*Configuro el BLE*/
 	ble_config_t ble_configuration = {
 		"Goniometro",
 		read_data};
 
 	LedsInit();
 	BleInit(&ble_configuration);
+	/*Inicializo el acelerometro*/
+	ADXL335Init();
 
 	/*Configuro e inicializo el puerto serie*/
 	serial_config_t mi_serial;
@@ -163,13 +176,13 @@ void app_main(void)
 	/*Configuro e inicializo la UART*/
 	UartInit(&mi_serial);
 
-	/*Configuro el canal analogico*/
+	/*Configuro el canal analogico para el potenciometro
 	analog_input_config_t mi_analogico;
-	mi_analogico.input = CH1;
+	mi_analogico.input = CH0;
 	mi_analogico.mode = ADC_SINGLE;
 	mi_analogico.func_p = NULL;
 	mi_analogico.param_p = NULL;
-	AnalogInputInit(&mi_analogico);
+	AnalogInputInit(&mi_analogico);*/
 
 	/*Configuro e inicializo el timer para la conversion analogica - digital*/
 	timer_config_t timer_conversion_AD = {
