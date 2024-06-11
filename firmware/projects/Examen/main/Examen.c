@@ -33,14 +33,19 @@
 #include "uart_mcu.h"
 #include "timer_mcu.h"
 #include "gpio_mcu.h"
-/*==================[macros and definitions]=================================*/
-#define CONFIG_SWITCH_PERIODO 1000 // Para evitar errores en la lectura de los switch: 1 mSeg
-#define CONFIG_BOMBA_PERIODO 1000000 // Entiendo que debería haber un delay para evitar errores en las bombas: 1 Seg
-#define PERIODO_MEDICION 3000000 // Medicion: 3 Seg
-#define PERIODO_ESTADO 5000000	 // Estado: 5 Seg
-/*==================[internal data definition]===============================*/
-bool irrigacion_habilitada = false, estado_humedad = false, estado_bomba_agua = false;
+#include "analog_io_mcu.h"
 
+/*==================[macros and definitions]=================================*/
+#define CONFIG_SWITCH_PERIODO 1000	 // Para evitar errores en la lectura de los switch: 1 mSeg
+#define CONFIG_BOMBA_PERIODO 1000000 // Entiendo que debería haber un delay para evitar errores en las bombas: 1 Seg
+#define PERIODO_MEDICION 3000000	 // Medicion: 3 Seg
+#define PERIODO_ESTADO 5000000		 // Estado: 5 Seg
+#define VALOR_BOMBA_BASICA 1284.7	 // Valor en mV, deducido por regla de 3
+#define VALOR_BOMBA_ACIDA 1435.7	 // Valor en mV, deducido por regla de 3
+#define VOLTAJE_REFERENCIA 3000		// Voltaje de referencia en mV	
+/*==================[internal data definition]===============================*/
+bool irrigacion_habilitada = false, estado_humedad = false, estado_bomba_agua = false, estado_bomba_acida = false, estado_bomba_basica = false;
+uint16_t valor_pH_milivolts = 0 , valor_pH_real = 0;
 TaskHandle_t medicion_handle = NULL;
 TaskHandle_t estado_handle = NULL;
 
@@ -63,13 +68,13 @@ void Medicion()
 
 		if (irrigacion_habilitada == true) // Controlo si el sistema esta habilitado
 		{
-			GPIOOn(PinSensorHumedad.pin); // Enciendo el GPIO de lectura
+			GPIOOn(PinSensorHumedad.pin); // Enciendo el GPIO del sensor de humedad
 
 			if (GPIORead(PinSensorHumedad.pin) == true) // Leo el estado actual del sensor y si es 1
 			{
-				estado_bomba_agua = true; // Bandera para saber el estado de la bomba de agua: false signficia apagada y true es prendida
-				estado_humedad = false;	  // Bandera para saber el estado de humedad: false signficia incorrecta y true es correcta
-				GPIOOn(PinBombas[0].pin); // Prendo la bomba de agua
+				estado_bomba_agua = true;							   // Bandera para saber el estado de la bomba de agua: false signficia apagada y true es prendida
+				estado_humedad = false;								   // Bandera para saber el estado de humedad: false signficia incorrecta y true es correcta
+				GPIOOn(PinBombas[0].pin);							   // Prendo la bomba de agua
 				vTaskDelay(CONFIG_BOMBA_PERIODO / portTICK_PERIOD_MS); // delay para dar tiempo para regar durante 1 Seg
 			}
 
@@ -78,6 +83,39 @@ void Medicion()
 				estado_bomba_agua = false; // Bandera para saber el estado de la bomba de agua: false signficia apagada y true es prendida
 				estado_humedad = true;	   // Bandera para saber el estado de humedad: false signficia incorrecta y true es correcta
 				GPIOOff(PinBombas[0].pin); // Apago la bomba de agua
+			}
+
+			AnalogInputReadSingle(CH1, &valor_pH_milivolts); // leo el valor de pH en milivolts
+
+			/*Regla de 3 
+	
+			Determino cuando se debe prender la bomba basica
+			3000 mV ------ 14 pH
+			x = 1284.7 mV ------------- 6 pH
+
+			Determino cuando se debe prender la bomba acida
+			3000 mV ------ 14 pH
+			x = 1435.7 mV ------------- 6,7 pH*/
+
+			valor_pH_real = (valor_pH_milivolts*14)/VOLTAJE_REFERENCIA; //acá el pH real ya está listo por regla de 3
+
+			if (valor_pH_milivolts < VALOR_BOMBA_BASICA)
+			{
+
+				GPIOOn(PinBombas[2].pin); // Prendo la bomba basica
+				estado_bomba_basica = true;
+				vTaskDelay(CONFIG_BOMBA_PERIODO / portTICK_PERIOD_MS); // delay para dar tiempo para regar durante 1 Seg
+				GPIOOff(PinBombas[2].pin);							   // Apago la bomba basica
+				estado_bomba_basica = false;
+			}
+
+			else if (valor_pH_milivolts > VALOR_BOMBA_ACIDA)
+			{
+				GPIOOn(PinBombas[1].pin); // Prendo la bomba acida
+				estado_bomba_acida = true;
+				vTaskDelay(CONFIG_BOMBA_PERIODO / portTICK_PERIOD_MS); // delay para dar tiempo para regar durante 1 Seg
+				GPIOOff(PinBombas[1].pin);							   // Prendo la bomba acida
+				estado_bomba_acida = false;
 			}
 		}
 
@@ -100,6 +138,10 @@ void Estado()
 
 		if (irrigacion_habilitada == true)
 		{
+			UartSendString(UART_PC, "Valor del pH: ");
+			UartSendString(UART_PC, (const char *)UartItoa(valor_pH_real, 10));
+			UartSendString(UART_PC, "\n\r");
+
 			if (estado_humedad == true)
 			{
 				UartSendString(UART_PC, "Humedad correcta.\n\r");
@@ -118,6 +160,26 @@ void Estado()
 			else
 			{
 				UartSendString(UART_PC, "Bomba de agua apagada.\n\r");
+			}
+
+			if (estado_bomba_acida == true)
+			{
+				UartSendString(UART_PC, "Bomba acida prendida.\n\r");
+			}
+
+			else
+			{
+				UartSendString(UART_PC, "Bomba acida apagada.\n\r");
+			}
+
+			if (estado_bomba_basica == true)
+			{
+				UartSendString(UART_PC, "Bomba basica prendida.\n\r");
+			}
+
+			else
+			{
+				UartSendString(UART_PC, "Bomba basica apagada.\n\r");
 			}
 		}
 
