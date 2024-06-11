@@ -53,6 +53,12 @@
         },
         {
             "path": "projects/ParcialEjemploII"
+        },
+        {
+            "path": "middelware"
+        },
+        {
+            "path": "projects/Examen"
         }
     ],
     "settings": {
