@@ -1,0 +1,27 @@
+var _examen_8c =
+[
+    [ "gpioConf_t", "structgpio_conf__t.html", "structgpio_conf__t" ],
+    [ "CONFIG_BOMBA_PERIODO", "_examen_8c.html#a019fc9de0c63931edaba48df476592dc", null ],
+    [ "CONFIG_SWITCH_PERIODO", "_examen_8c.html#ad31383a85a1076cd66616654c9b9ef95", null ],
+    [ "PERIODO_ESTADO", "_examen_8c.html#a04ff9ac679cde35d55d3f27b60877358", null ],
+    [ "PERIODO_MEDICION", "_examen_8c.html#a5cf10d41cfee7ea378cacaa9ee3db07d", null ],
+    [ "VALOR_BOMBA_ACIDA", "_examen_8c.html#ab88175a163bdfe96ccc34adda7cb8849", null ],
+    [ "VALOR_BOMBA_BASICA", "_examen_8c.html#a4ba565be1ad2a4d834368e26a5b49265", null ],
+    [ "VOLTAJE_REFERENCIA", "_examen_8c.html#ae28b2010730147efed34ab7599d1f129", null ],
+    [ "app_main", "_examen_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70", null ],
+    [ "Estado", "_examen_8c.html#ab174938a28e0ed33d3a47d932f7771d7", null ],
+    [ "Medicion", "_examen_8c.html#a9b6da568105ff15b9ba758ba8571cb6d", null ],
+    [ "TimerEstado", "_examen_8c.html#af3e5d5159396df1560e173b24d6b5403", null ],
+    [ "TimerMedicion", "_examen_8c.html#a0d046701363e27b9c6e4be9f3cbd60d1", null ],
+    [ "estado_bomba_acida", "_examen_8c.html#a4610f8f0662688a1614838d8d4896995", null ],
+    [ "estado_bomba_agua", "_examen_8c.html#add7574537def4ead5ae3fbfd3a126f78", null ],
+    [ "estado_bomba_basica", "_examen_8c.html#a1524ffc05720b55cec326377f5b466b9", null ],
+    [ "estado_handle", "_examen_8c.html#a00ed7c66b2d8b4a936cac88e971405ae", null ],
+    [ "estado_humedad", "_examen_8c.html#ac0c8ebd434f277791e873b3059d8be5d", null ],
+    [ "irrigacion_habilitada", "_examen_8c.html#a64f7c4aec17beacb6e44b664a854785a", null ],
+    [ "medicion_handle", "_examen_8c.html#af9d51b8b36ceeb2dc425cc916991e1b0", null ],
+    [ "PinBombas", "_examen_8c.html#a5a2c235a91df711124175f56a5fb977a", null ],
+    [ "PinSensorHumedad", "_examen_8c.html#a1e73b41e38f26ea59a5d9a97578d8f83", null ],
+    [ "valor_pH_milivolts", "_examen_8c.html#a8225fcf48006a2ffbc0e5bb783176cc2", null ],
+    [ "valor_pH_real", "_examen_8c.html#a7a2b2b6c603b5b3d39e2e408dc655a4d", null ]
+];

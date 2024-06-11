@@ -1,25 +1,27 @@
 /*! @mainpage Examen - 11/06/24 - Beauchamps Eric
  *
- * @section genDesc General Description
- *
- * This section describes how the program works.
- *
- * <a href="https://drive.google.com/...">Operation Example</a>
+ * @section genDesc Se diseña un dispositivo basado en la ESP-EDU que permita controlar el riego y el pH de una plantera mediante el uso de dos sensores y tres bombas.
  *
  * @section hardConn Hardware Connection
  *
- * |    Peripheral  |   ESP32   	|
- * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * |    Peripheral  		|   ESP32   	|
+ * |:----------------------:|:--------------|
+ * | 	sensor de humedad 	| 	GPIO_19		|
+ * | 	sensor de pH	 	| 	GPIO_01		|
+ * | 	Bomba de agua	 	| 	GPIO_20		|
+ * | 	Bomba de phA	 	| 	GPIO_21		|
+ * | 	Bomba de phB 		| 	GPIO_22		|
  *
  *
  * @section changelog Changelog
  *
- * |   Date	    | Description                                    |
+ * |   Date	    | 				Description                      |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 11/06/2024 | 		Creacion del documento	                 |
+ * | 11/06/2024 |		Modificacion del documento               |
+ * | 11/06/2024 | 		Finalizacion del documento	             |
  *
- * @author Albano Peñalva (albano.penalva@uner.edu.ar)
+ * @author Beauchamps Eric (beauchampseric97@gmail.com)
  *
  */
 
@@ -36,12 +38,33 @@
 #include "analog_io_mcu.h"
 
 /*==================[macros and definitions]=================================*/
+/** @def CONFIG_SWITCH_PERIODO
+ *  @brief Valor de tiempo (en microsegundos) para evitar errores en la lectura de los switch,
+ */
 #define CONFIG_SWITCH_PERIODO 1000	 // Para evitar errores en la lectura de los switch: 1 mSeg
+/** @def CONFIG_BOMBA_PERIODO
+ *  @brief Valor de tiempo (en microsegundos) para que puedan regar las bombas,
+ */
 #define CONFIG_BOMBA_PERIODO 1000000 // Entiendo que debería haber un delay para evitar errores en las bombas: 1 Seg
+/** @def PERIODO_MEDICION 
+ *  @brief Valor de tiempo (en microsegundos) entre cada medicion
+ */
 #define PERIODO_MEDICION 3000000	 // Medicion: 3 Seg
+/** @def PERIODO_ESTADO
+ *  @brief Valor de tiempo (en microsegundos) para informar el estado del sistema
+ */
 #define PERIODO_ESTADO 5000000		 // Estado: 5 Seg
+/** @def VALOR_BOMBA_BASICA
+ *  @brief Valor de tensión (en mV) parz activar la bomba basica
+ */
 #define VALOR_BOMBA_BASICA 1284.7	 // Valor en mV, deducido por regla de 3
+/** @def VALOR_BOMBA_ACIDA
+ *  @brief Valor de tensión (en mV) parz activar la bomba acida
+ */
 #define VALOR_BOMBA_ACIDA 1435.7	 // Valor en mV, deducido por regla de 3
+/** @def VALOR_BOMBA_ACIDA
+ *  @brief Valor de tensión  de referencia (en mV)
+ */
 #define VOLTAJE_REFERENCIA 3000		// Voltaje de referencia en mV	
 /*==================[internal data definition]===============================*/
 bool irrigacion_habilitada = false, estado_humedad = false, estado_bomba_agua = false, estado_bomba_acida = false, estado_bomba_basica = false;
@@ -59,6 +82,9 @@ gpioConf_t PinSensorHumedad;
 gpioConf_t PinBombas[2]; // porque son 3 bombas
 /*==================[internal functions declaration]=========================*/
 
+/**
+ * @brief Permite la medicion de las variables de interes (Humedad y pH)
+ */
 void Medicion()
 {
 	while (1)
@@ -129,6 +155,9 @@ void Medicion()
 	}
 }
 
+/**
+ * @brief Informa acerca del estado del sistema (Valor de pH, estado de la humedad, bombas activadas/desactivadas)
+ */
 void Estado()
 {
 	while (1)
@@ -189,12 +218,16 @@ void Estado()
 		}
 	}
 }
-
+/**
+ * @brief Timer para realizar la medicion en un tiempo determinado
+ */
 void TimerMedicion(void *param)
 {
 	vTaskNotifyGiveFromISR(medicion_handle, pdFALSE);
 }
-
+/**
+ * @brief Timer para informar acerca del estado del sistema en un tiempo determinado
+ */
 void TimerEstado(void *param)
 {
 	vTaskNotifyGiveFromISR(estado_handle, pdFALSE);
