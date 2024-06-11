@@ -50,31 +50,28 @@ bool ADXL335Init();
  * @param[in] No hay parámetros
  * @return Aceleración en el eje x
  */
-float ReadXRefValue();
-
-float ReadYRefValue();
+float ReadXValue();
 /** @fn float ReadYValue()
  * @brief Función que lee el pin y del driver y devuelve el valor convertido de analógico a digital en unidades de gravedad.
  * @param[in] No hay parámetros
  * @return Aceleración en el eje y
  */
-float ReadXValue();
+float ReadYValue();
 /** @fn float ReadZValue()
  * @brief Función que lee el pin z del driver y devuelve el valor convertido de analógico a digital en unidades de gravedad.
  * @param[in] No hay parámetros
  * @return Aceleración en el eje z
  */
-float ReadYValue();
+float ReadZValue();
 /** @fn bool ADXL335Deinit(gpio_t gSelect1, gpio_t gSelect2)
  * @brief Función que de-inicializa los pines de selección del driver
  * @return 1 (true) if no error
  */
 bool ADXL335Deinit();
 
-int ReadYRefValueInt();
-int ReadXRefValueInt();
-int ReadYValueInt();
 int ReadXValueInt();
+int ReadYValueInt();
+int ReadZValueInt();
 
 /** @} doxygen end group definition */
 /** @} doxygen end group definition */

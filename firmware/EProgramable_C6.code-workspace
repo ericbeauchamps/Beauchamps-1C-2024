@@ -47,6 +47,12 @@
         },
         {
             "path": "projects/ProyectoIntegrador"
+        },
+        {
+            "path": "projects/ParcialEjemplo"
+        },
+        {
+            "path": "projects/ParcialEjemploII"
         }
     ],
     "settings": {
