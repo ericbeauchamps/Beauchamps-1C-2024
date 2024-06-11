@@ -1,0 +1,16 @@
+Examen - 11/06/24 - Beauchamps Eric
+
+1. Se trata del protocolo I2C:
+Esta basado en el uso de dos líneas principales: Serial Clock (SCL) y Serial Data (SDA). Las lineas de datos son bidireccionales, y además está la masa.
+Permite interconectar varios dispositivos a un mismo par de cables.
+Conexiones de hasta 1 metro. 
+Admite dos velocidades de comunicación siendo estas 100 KHz y 400 KHz. 
+Solo permite modo Half-Duplex. 
+Contempla como gestionar colisiones.
+
+2. La figura se refiere a un conversor analogico - digital de aproximaciones sucesivas. 
+Si el capacitor se omite lo que sucede es que perdemos el filtrado del ruido y también variara el voltaje entrada, 
+lo cual terminara perjudicando el valor analogico que deseamos convertir.
+
+
+
