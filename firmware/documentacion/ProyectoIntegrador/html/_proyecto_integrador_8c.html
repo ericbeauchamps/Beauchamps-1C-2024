@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Integrador - Electrogoniometro: Referencia del archivo C:/Repositorio/Beauchamps-1C-2024/firmware/projects/ProyectoIntegrador/main/ProyectoIntegrador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="index.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Integrador - Electrogoniometro
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_proyecto_integrador_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo ProyectoIntegrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;led.h&quot;</code><br />
+<code>#include &quot;ble_mcu.h&quot;</code><br />
+<code>#include &quot;timer_mcu.h&quot;</code><br />
+<code>#include &quot;delay_mcu.h&quot;</code><br />
+<code>#include &quot;analog_io_mcu.h&quot;</code><br />
+</div>
+<p><a href="_proyecto_integrador_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a3df1b4cad09974bfc68858fad7cdc054" id="r_a3df1b4cad09974bfc68858fad7cdc054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a>&#160;&#160;&#160;500</td></tr>
+<tr class="memdesc:a3df1b4cad09974bfc68858fad7cdc054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor de tiempo (en milisegundos) para verificar el estado del BLE.  <br /></td></tr>
+<tr class="separator:a3df1b4cad09974bfc68858fad7cdc054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3ccd8a43b5c5e8a4d573780da1fd4a" id="r_a7a3ccd8a43b5c5e8a4d573780da1fd4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a>&#160;&#160;&#160;LED_1</td></tr>
+<tr class="memdesc:a7a3ccd8a43b5c5e8a4d573780da1fd4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED que permite visualizar el estado del BLE. LED apagado - BLE apagado, LED parpadeando - BLE desconectado, LED prendido - BLE conectado.  <br /></td></tr>
+<tr class="separator:a7a3ccd8a43b5c5e8a4d573780da1fd4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556100807b8faec82a4f0d0c95c8e4b4" id="r_a556100807b8faec82a4f0d0c95c8e4b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a556100807b8faec82a4f0d0c95c8e4b4">PERIODO_MUESTREO_AD</a>&#160;&#160;&#160;20000</td></tr>
+<tr class="memdesc:a556100807b8faec82a4f0d0c95c8e4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor de tiempo (en microsegundos) de muestreo para la conversion de analogico a digital.  <br /></td></tr>
+<tr class="separator:a556100807b8faec82a4f0d0c95c8e4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab44918ab85570fe5c937672472e6d277" id="r_ab44918ab85570fe5c937672472e6d277"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab44918ab85570fe5c937672472e6d277">ANGULO_MINIMO</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ab44918ab85570fe5c937672472e6d277"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angulo minimo admisible para la articulacion del codo: 0 °. Se utiliza para el mapeo.  <br /></td></tr>
+<tr class="separator:ab44918ab85570fe5c937672472e6d277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cfec38fc3a991df8ece334d4739d6b4" id="r_a3cfec38fc3a991df8ece334d4739d6b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3cfec38fc3a991df8ece334d4739d6b4">ANGULO_MAXIMO</a>&#160;&#160;&#160;150</td></tr>
+<tr class="memdesc:a3cfec38fc3a991df8ece334d4739d6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angulo maximo admisible para la articulacion del codo: 150 °. Se utiliza para el mapeo.  <br /></td></tr>
+<tr class="separator:a3cfec38fc3a991df8ece334d4739d6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5d238599332b11dd5ec4fbbc5b9edb" id="r_aec5d238599332b11dd5ec4fbbc5b9edb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a>&#160;&#160;&#160;735</td></tr>
+<tr class="memdesc:aec5d238599332b11dd5ec4fbbc5b9edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voltaje en milivolts correspondiente al ANGULO_MINIMO. Se utiliza para el mapeo.  <br /></td></tr>
+<tr class="separator:aec5d238599332b11dd5ec4fbbc5b9edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1622f9310b9f2345c8e9494bd4851d13" id="r_a1622f9310b9f2345c8e9494bd4851d13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1622f9310b9f2345c8e9494bd4851d13">VALOR_MAXIMO</a>&#160;&#160;&#160;2535</td></tr>
+<tr class="memdesc:a1622f9310b9f2345c8e9494bd4851d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voltaje en milivolts correspondiente al ANGULO_MAXIMO. Se utiliza para el mapeo.  <br /></td></tr>
+<tr class="separator:a1622f9310b9f2345c8e9494bd4851d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ab56e1ff0f71e003f2e08c6ec294528b1" id="r_ab56e1ff0f71e003f2e08c6ec294528b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a> (uint8_t *data, uint8_t length)</td></tr>
+<tr class="memdesc:ab56e1ff0f71e003f2e08c6ec294528b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función a ejecutarse ante un interrupción de recepción a través de la conexión BLE.  <br /></td></tr>
+<tr class="separator:ab56e1ff0f71e003f2e08c6ec294528b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad792d6ebf2643acc666dec376efa83d7" id="r_ad792d6ebf2643acc666dec376efa83d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad792d6ebf2643acc666dec376efa83d7">ConversionAD</a> ()</td></tr>
+<tr class="memdesc:ad792d6ebf2643acc666dec376efa83d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite la conversión analogica - digital, y tambien obtiene el angulo medido despues de realizar un mapeo.  <br /></td></tr>
+<tr class="separator:ad792d6ebf2643acc666dec376efa83d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac730aa06c9b0b26a0ef7b2df237da191" id="r_ac730aa06c9b0b26a0ef7b2df237da191"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac730aa06c9b0b26a0ef7b2df237da191">Visualizacion</a> ()</td></tr>
+<tr class="memdesc:ac730aa06c9b0b26a0ef7b2df237da191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permite hallar el angulo minimo y maximo, y tambien permite la visualizacion del angulo actual, el angulo mínimo y maximo, en el dispositivo movil.  <br /></td></tr>
+<tr class="separator:ac730aa06c9b0b26a0ef7b2df237da191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae997fb6cfda3d8ec7fc01761d5b246c6" id="r_ae997fb6cfda3d8ec7fc01761d5b246c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae997fb6cfda3d8ec7fc01761d5b246c6">TimerADC</a> (void *param)</td></tr>
+<tr class="memdesc:ae997fb6cfda3d8ec7fc01761d5b246c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion invocada en la interrupcion del timer A.  <br /></td></tr>
+<tr class="separator:ae997fb6cfda3d8ec7fc01761d5b246c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a35034cac34d984afab665bfa6ca9da1a" id="r_a35034cac34d984afab665bfa6ca9da1a"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35034cac34d984afab665bfa6ca9da1a">bt_conectado</a> = false</td></tr>
+<tr class="separator:a35034cac34d984afab665bfa6ca9da1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8b16a95a2b9f8e839bfcad9f8ec5ed" id="r_a4b8b16a95a2b9f8e839bfcad9f8ec5ed"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a></td></tr>
+<tr class="separator:a4b8b16a95a2b9f8e839bfcad9f8ec5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05fc1d2a7b71765529581382d1cc65b7" id="r_a05fc1d2a7b71765529581382d1cc65b7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05fc1d2a7b71765529581382d1cc65b7">valor_minimo</a> = 2535</td></tr>
+<tr class="separator:a05fc1d2a7b71765529581382d1cc65b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00167e105bb327405201851ee2f14697" id="r_a00167e105bb327405201851ee2f14697"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00167e105bb327405201851ee2f14697">valor_maximo</a> = 0</td></tr>
+<tr class="separator:a00167e105bb327405201851ee2f14697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09faf663b135defba4a06bff5fd016c" id="r_ab09faf663b135defba4a06bff5fd016c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab09faf663b135defba4a06bff5fd016c">angulo_minimo</a> = 150</td></tr>
+<tr class="separator:ab09faf663b135defba4a06bff5fd016c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f078f7437f3692fe0cc01795d629ff3" id="r_a7f078f7437f3692fe0cc01795d629ff3"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f078f7437f3692fe0cc01795d629ff3">angulo_maximo</a> = 0</td></tr>
+<tr class="separator:a7f078f7437f3692fe0cc01795d629ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d93d52499f0348b5dd06704bd288f0" id="r_ac1d93d52499f0348b5dd06704bd288f0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a></td></tr>
+<tr class="separator:ac1d93d52499f0348b5dd06704bd288f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25ff4470f47ee5251525e7931c29568" id="r_ad25ff4470f47ee5251525e7931c29568"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad25ff4470f47ee5251525e7931c29568">conversion_AD_handle</a> = NULL</td></tr>
+<tr class="separator:ad25ff4470f47ee5251525e7931c29568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e1a7462867b1802df1ea1a69d778427" id="r_a2e1a7462867b1802df1ea1a69d778427"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e1a7462867b1802df1ea1a69d778427">visualizacion_handle</a> = NULL</td></tr>
+<tr class="separator:a2e1a7462867b1802df1ea1a69d778427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a3cfec38fc3a991df8ece334d4739d6b4" name="a3cfec38fc3a991df8ece334d4739d6b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cfec38fc3a991df8ece334d4739d6b4">&#9670;&#160;</a></span>ANGULO_MAXIMO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ANGULO_MAXIMO&#160;&#160;&#160;150</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Angulo maximo admisible para la articulacion del codo: 150 °. Se utiliza para el mapeo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00065">65</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a>.</p>
+
+</div>
+</div>
+<a id="ab44918ab85570fe5c937672472e6d277" name="ab44918ab85570fe5c937672472e6d277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab44918ab85570fe5c937672472e6d277">&#9670;&#160;</a></span>ANGULO_MINIMO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ANGULO_MINIMO&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Angulo minimo admisible para la articulacion del codo: 0 °. Se utiliza para el mapeo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00060">60</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a>.</p>
+
+</div>
+</div>
+<a id="a3df1b4cad09974bfc68858fad7cdc054" name="a3df1b4cad09974bfc68858fad7cdc054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df1b4cad09974bfc68858fad7cdc054">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor de tiempo (en milisegundos) para verificar el estado del BLE. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00045">45</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a7a3ccd8a43b5c5e8a4d573780da1fd4a" name="a7a3ccd8a43b5c5e8a4d573780da1fd4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3ccd8a43b5c5e8a4d573780da1fd4a">&#9670;&#160;</a></span>LED_BT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LED_BT&#160;&#160;&#160;LED_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LED que permite visualizar el estado del BLE. LED apagado - BLE apagado, LED parpadeando - BLE desconectado, LED prendido - BLE conectado. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00050">50</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a556100807b8faec82a4f0d0c95c8e4b4" name="a556100807b8faec82a4f0d0c95c8e4b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556100807b8faec82a4f0d0c95c8e4b4">&#9670;&#160;</a></span>PERIODO_MUESTREO_AD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIODO_MUESTREO_AD&#160;&#160;&#160;20000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor de tiempo (en microsegundos) de muestreo para la conversion de analogico a digital. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00055">55</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a1622f9310b9f2345c8e9494bd4851d13" name="a1622f9310b9f2345c8e9494bd4851d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1622f9310b9f2345c8e9494bd4851d13">&#9670;&#160;</a></span>VALOR_MAXIMO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VALOR_MAXIMO&#160;&#160;&#160;2535</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Voltaje en milivolts correspondiente al ANGULO_MAXIMO. Se utiliza para el mapeo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00075">75</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a>.</p>
+
+</div>
+</div>
+<a id="aec5d238599332b11dd5ec4fbbc5b9edb" name="aec5d238599332b11dd5ec4fbbc5b9edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5d238599332b11dd5ec4fbbc5b9edb">&#9670;&#160;</a></span>VALOR_MINIMO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VALOR_MINIMO&#160;&#160;&#160;735</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Voltaje en milivolts correspondiente al ANGULO_MINIMO. Se utiliza para el mapeo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00070">70</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00180">180</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00077">bt_conectado</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00045">CONFIG_BLINK_PERIOD</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00084">conversion_AD_handle</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00050">LED_BT</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00055">PERIODO_MUESTREO_AD</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00093">read_data()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00170">TimerADC()</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00085">visualizacion_handle</a>.</p>
+
+</div>
+</div>
+<a id="ad792d6ebf2643acc666dec376efa83d7" name="ad792d6ebf2643acc666dec376efa83d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad792d6ebf2643acc666dec376efa83d7">&#9670;&#160;</a></span>ConversionAD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConversionAD </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permite la conversión analogica - digital, y tambien obtiene el angulo medido despues de realizar un mapeo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00103">103</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00065">ANGULO_MAXIMO</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">angulo_medido</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00060">ANGULO_MINIMO</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00075">VALOR_MAXIMO</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">valor_medido</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00070">VALOR_MINIMO</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ab56e1ff0f71e003f2e08c6ec294528b1" name="ab56e1ff0f71e003f2e08c6ec294528b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56e1ff0f71e003f2e08c6ec294528b1">&#9670;&#160;</a></span>read_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_data </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función a ejecutarse ante un interrupción de recepción a través de la conexión BLE. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Puntero a array de datos recibidos </td></tr>
+    <tr><td class="paramname">length</td><td>Longitud del array de datos recibidos </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00093">93</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ae997fb6cfda3d8ec7fc01761d5b246c6" name="ae997fb6cfda3d8ec7fc01761d5b246c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae997fb6cfda3d8ec7fc01761d5b246c6">&#9670;&#160;</a></span>TimerADC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerADC </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcion invocada en la interrupcion del timer A. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00170">170</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00077">bt_conectado</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00084">conversion_AD_handle</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00085">visualizacion_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ac730aa06c9b0b26a0ef7b2df237da191" name="ac730aa06c9b0b26a0ef7b2df237da191"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac730aa06c9b0b26a0ef7b2df237da191">&#9670;&#160;</a></span>Visualizacion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Visualizacion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permite hallar el angulo minimo y maximo, y tambien permite la visualizacion del angulo actual, el angulo mínimo y maximo, en el dispositivo movil. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00132">132</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_proyecto_integrador_8c_source.html#l00082">angulo_maximo</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">angulo_medido</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">angulo_minimo</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">valor_maximo</a>, <a class="el" href="_proyecto_integrador_8c_source.html#l00082">valor_medido</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00082">valor_minimo</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a7f078f7437f3692fe0cc01795d629ff3" name="a7f078f7437f3692fe0cc01795d629ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f078f7437f3692fe0cc01795d629ff3">&#9670;&#160;</a></span>angulo_maximo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t angulo_maximo = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="ac1d93d52499f0348b5dd06704bd288f0" name="ac1d93d52499f0348b5dd06704bd288f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d93d52499f0348b5dd06704bd288f0">&#9670;&#160;</a></span>angulo_medido</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t angulo_medido</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="ab09faf663b135defba4a06bff5fd016c" name="ab09faf663b135defba4a06bff5fd016c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09faf663b135defba4a06bff5fd016c">&#9670;&#160;</a></span>angulo_minimo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t angulo_minimo = 150</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="a35034cac34d984afab665bfa6ca9da1a" name="a35034cac34d984afab665bfa6ca9da1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35034cac34d984afab665bfa6ca9da1a">&#9670;&#160;</a></span>bt_conectado</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool bt_conectado = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00077">77</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00170">TimerADC()</a>.</p>
+
+</div>
+</div>
+<a id="ad25ff4470f47ee5251525e7931c29568" name="ad25ff4470f47ee5251525e7931c29568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25ff4470f47ee5251525e7931c29568">&#9670;&#160;</a></span>conversion_AD_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t conversion_AD_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00084">84</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00170">TimerADC()</a>.</p>
+
+</div>
+</div>
+<a id="a00167e105bb327405201851ee2f14697" name="a00167e105bb327405201851ee2f14697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00167e105bb327405201851ee2f14697">&#9670;&#160;</a></span>valor_maximo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor_maximo = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="a4b8b16a95a2b9f8e839bfcad9f8ec5ed" name="a4b8b16a95a2b9f8e839bfcad9f8ec5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">&#9670;&#160;</a></span>valor_medido</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor_medido</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00103">ConversionAD()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="a05fc1d2a7b71765529581382d1cc65b7" name="a05fc1d2a7b71765529581382d1cc65b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05fc1d2a7b71765529581382d1cc65b7">&#9670;&#160;</a></span>valor_minimo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor_minimo = 2535</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00082">82</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00132">Visualizacion()</a>.</p>
+
+</div>
+</div>
+<a id="a2e1a7462867b1802df1ea1a69d778427" name="a2e1a7462867b1802df1ea1a69d778427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e1a7462867b1802df1ea1a69d778427">&#9670;&#160;</a></span>visualizacion_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t visualizacion_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_proyecto_integrador_8c_source.html#l00085">85</a> del archivo <a class="el" href="_proyecto_integrador_8c_source.html">ProyectoIntegrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_proyecto_integrador_8c_source.html#l00180">app_main()</a> y <a class="el" href="_proyecto_integrador_8c_source.html#l00170">TimerADC()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_840ce7523b0932d5abaf1b926f8f4cf5.html">Repositorio</a></li><li class="navelem"><a class="el" href="dir_cdd32e85384b092bba3ed1c26175bc2a.html">Beauchamps-1C-2024</a></li><li class="navelem"><a class="el" href="dir_a00c5a9728ad2f261de4b5b52be0d6f8.html">firmware</a></li><li class="navelem"><a class="el" href="dir_2fbcd39729f371cd7b942683335bcdd4.html">projects</a></li><li class="navelem"><a class="el" href="dir_8b0005ab9c2e6cb4b23fc1669bb30ac3.html">ProyectoIntegrador</a></li><li class="navelem"><a class="el" href="dir_f141b1e85e79c6e4bd3901b11739d87a.html">main</a></li><li class="navelem"><a class="el" href="_proyecto_integrador_8c.html">ProyectoIntegrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

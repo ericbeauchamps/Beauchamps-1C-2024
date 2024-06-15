@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Integrador - Electrogoniometro: Archivo de código fuente C:/Repositorio/Beauchamps-1C-2024/firmware/projects/ProyectoIntegrador/main/ProyectoIntegrador.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="index.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto Integrador - Electrogoniometro
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_proyecto_integrador_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ProyectoIntegrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_proyecto_integrador_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;led.h&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;ble_mcu.h&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;timer_mcu.h&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;delay_mcu.h&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;analog_io_mcu.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a3df1b4cad09974bfc68858fad7cdc054">   45</a></span><span class="preprocessor">#define CONFIG_BLINK_PERIOD 500</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a7a3ccd8a43b5c5e8a4d573780da1fd4a">   50</a></span><span class="preprocessor">#define LED_BT LED_1</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a556100807b8faec82a4f0d0c95c8e4b4">   55</a></span><span class="preprocessor">#define PERIODO_MUESTREO_AD 20000</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ab44918ab85570fe5c937672472e6d277">   60</a></span><span class="preprocessor">#define ANGULO_MINIMO 0</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a3cfec38fc3a991df8ece334d4739d6b4">   65</a></span><span class="preprocessor">#define ANGULO_MAXIMO 150</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">   70</a></span><span class="preprocessor">#define VALOR_MINIMO 735</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a1622f9310b9f2345c8e9494bd4851d13">   75</a></span><span class="preprocessor">#define VALOR_MAXIMO 2535</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a35034cac34d984afab665bfa6ca9da1a">   77</a></span><span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="_proyecto_integrador_8c.html#a35034cac34d984afab665bfa6ca9da1a">bt_conectado</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">// 150 ° - 2535 mV</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">// 0 ° - 735 mV</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a7f078f7437f3692fe0cc01795d629ff3">   82</a></span>uint16_t <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>, <a class="code hl_variable" href="_proyecto_integrador_8c.html#a05fc1d2a7b71765529581382d1cc65b7">valor_minimo</a> = 2535, <a class="code hl_variable" href="_proyecto_integrador_8c.html#a00167e105bb327405201851ee2f14697">valor_maximo</a> = 0, <a class="code hl_variable" href="_proyecto_integrador_8c.html#ab09faf663b135defba4a06bff5fd016c">angulo_minimo</a> = 150, <a class="code hl_variable" href="_proyecto_integrador_8c.html#a7f078f7437f3692fe0cc01795d629ff3">angulo_maximo</a> = 0, <a class="code hl_variable" href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ad25ff4470f47ee5251525e7931c29568">   84</a></span>TaskHandle_t <a class="code hl_variable" href="_proyecto_integrador_8c.html#ad25ff4470f47ee5251525e7931c29568">conversion_AD_handle</a> = NULL;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a2e1a7462867b1802df1ea1a69d778427">   85</a></span>TaskHandle_t <a class="code hl_variable" href="_proyecto_integrador_8c.html#a2e1a7462867b1802df1ea1a69d778427">visualizacion_handle</a> = NULL;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">/*==================[internal functions declaration]=========================*/</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_proyecto_integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a>(uint8_t *data, uint8_t length)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (data[0] == <span class="charliteral">&#39;R&#39;</span>)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="comment">// xTaskNotifyGive(fft_task_handle);</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ad792d6ebf2643acc666dec376efa83d7">  103</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_proyecto_integrador_8c.html#ad792d6ebf2643acc666dec376efa83d7">ConversionAD</a>()</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        AnalogInputReadSingle(CH1, &amp;<a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="comment">/*Evita errores a la hora de medir el angulo porque el potenciometro de desplazaba en mi brazo debido a la falta de una buena fijacion*/</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a> &lt; <a class="code hl_define" href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a>)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a> = <a class="code hl_define" href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="comment">/*Evita errores a la hora de medir el angulo porque el potenciometro de desplazaba en mi brazo debido a la falta de una buena fijacion*/</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a> &gt; <a class="code hl_define" href="_proyecto_integrador_8c.html#a1622f9310b9f2345c8e9494bd4851d13">VALOR_MAXIMO</a>)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a> = <a class="code hl_define" href="_proyecto_integrador_8c.html#a1622f9310b9f2345c8e9494bd4851d13">VALOR_MAXIMO</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="comment">/*Realizo un mapeo para hallar el angulo medido*/</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <a class="code hl_variable" href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a> = <a class="code hl_define" href="_proyecto_integrador_8c.html#ab44918ab85570fe5c937672472e6d277">ANGULO_MINIMO</a> + (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a> - <a class="code hl_define" href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a>) * (<a class="code hl_define" href="_proyecto_integrador_8c.html#a3cfec38fc3a991df8ece334d4739d6b4">ANGULO_MAXIMO</a> - <a class="code hl_define" href="_proyecto_integrador_8c.html#ab44918ab85570fe5c937672472e6d277">ANGULO_MINIMO</a>) / (<a class="code hl_define" href="_proyecto_integrador_8c.html#a1622f9310b9f2345c8e9494bd4851d13">VALOR_MAXIMO</a> - <a class="code hl_define" href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ac730aa06c9b0b26a0ef7b2df237da191">  132</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_proyecto_integrador_8c.html#ac730aa06c9b0b26a0ef7b2df237da191">Visualizacion</a>()</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">char</span> msg[30];</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="comment">/*Hallo el angulo maximo*/</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a00167e105bb327405201851ee2f14697">valor_maximo</a> &lt;= <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a00167e105bb327405201851ee2f14697">valor_maximo</a> = <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a7f078f7437f3692fe0cc01795d629ff3">angulo_maximo</a> = <a class="code hl_variable" href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="comment">/*Hallo el angulo minimo*/</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a05fc1d2a7b71765529581382d1cc65b7">valor_minimo</a> &gt;= <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a05fc1d2a7b71765529581382d1cc65b7">valor_minimo</a> = <a class="code hl_variable" href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#ab09faf663b135defba4a06bff5fd016c">angulo_minimo</a> = <a class="code hl_variable" href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="comment">/*Envio el angulo actual medido a traves del BLE al dispositivo movil*/</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        sprintf(msg, <span class="stringliteral">&quot;*D%u\n*&quot;</span>, <a class="code hl_variable" href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        BleSendString(msg);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="comment">/*Envio el angulo minimo medido a traves del BLE al dispositivo movil*/</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        sprintf(msg, <span class="stringliteral">&quot;*M%u\n*&quot;</span>, <a class="code hl_variable" href="_proyecto_integrador_8c.html#ab09faf663b135defba4a06bff5fd016c">angulo_minimo</a>);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        BleSendString(msg);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">/*Envio el angulo maximo medido a traves del BLE al dispositivo movil*/</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        sprintf(msg, <span class="stringliteral">&quot;*P%u\n*&quot;</span>, <a class="code hl_variable" href="_proyecto_integrador_8c.html#a7f078f7437f3692fe0cc01795d629ff3">angulo_maximo</a>);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        BleSendString(msg);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#ae997fb6cfda3d8ec7fc01761d5b246c6">  170</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_proyecto_integrador_8c.html#ae997fb6cfda3d8ec7fc01761d5b246c6">TimerADC</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>{</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="_proyecto_integrador_8c.html#a35034cac34d984afab665bfa6ca9da1a">bt_conectado</a> == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        vTaskNotifyGiveFromISR(<a class="code hl_variable" href="_proyecto_integrador_8c.html#ad25ff4470f47ee5251525e7931c29568">conversion_AD_handle</a>, pdFALSE);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        vTaskNotifyGiveFromISR(<a class="code hl_variable" href="_proyecto_integrador_8c.html#a2e1a7462867b1802df1ea1a69d778427">visualizacion_handle</a>, pdFALSE); <span class="comment">/* Envía una notificación a la tarea asociada. No siempre es necesaria*/</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="}">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="_proyecto_integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  180</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_proyecto_integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="comment">/*Configuro e inicializo el BLE*/</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    ble_config_t ble_configuration = {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="stringliteral">&quot;Goniometro&quot;</span>,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <a class="code hl_function" href="_proyecto_integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a>};</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    BleInit(&amp;ble_configuration);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="comment">/*Inicializo los LEDS*/</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    LedsInit();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">/*Configuro e inicializo el timer para la conversion analogica - digital y para la visualizacion de la informacion*/</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    timer_config_t timer_conversion_AD = {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        .timer = TIMER_A,</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        .period = <a class="code hl_define" href="_proyecto_integrador_8c.html#a556100807b8faec82a4f0d0c95c8e4b4">PERIODO_MUESTREO_AD</a>,</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        .func_p = <a class="code hl_function" href="_proyecto_integrador_8c.html#ae997fb6cfda3d8ec7fc01761d5b246c6">TimerADC</a>,</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        .param_p = NULL};</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    TimerInit(&amp;timer_conversion_AD);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    TimerStart(TIMER_A);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">/*Tareas necesarias para la resolucion del proyecto*/</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    xTaskCreate(&amp;<a class="code hl_function" href="_proyecto_integrador_8c.html#ad792d6ebf2643acc666dec376efa83d7">ConversionAD</a>, <span class="stringliteral">&quot;Conversor AD&quot;</span>, 2048, NULL, 5, &amp;<a class="code hl_variable" href="_proyecto_integrador_8c.html#ad25ff4470f47ee5251525e7931c29568">conversion_AD_handle</a>);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    xTaskCreate(&amp;<a class="code hl_function" href="_proyecto_integrador_8c.html#ac730aa06c9b0b26a0ef7b2df237da191">Visualizacion</a>, <span class="stringliteral">&quot;Visualizacion&quot;</span>, 2048, NULL, 5, &amp;<a class="code hl_variable" href="_proyecto_integrador_8c.html#a2e1a7462867b1802df1ea1a69d778427">visualizacion_handle</a>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        vTaskDelay(<a class="code hl_define" href="_proyecto_integrador_8c.html#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a> / portTICK_PERIOD_MS);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="comment">/*Manejo del bluetooth*/</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">switch</span> (BleStatus())</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">case</span> BLE_OFF:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            LedOff(<a class="code hl_define" href="_proyecto_integrador_8c.html#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="keywordflow">case</span> BLE_DISCONNECTED:</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            LedToggle(<a class="code hl_define" href="_proyecto_integrador_8c.html#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">case</span> BLE_CONNECTED:</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            LedOn(<a class="code hl_define" href="_proyecto_integrador_8c.html#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="comment">/*Bandera booleana que permite realizar las tareas solo cuando el BLE de la placa esta conectado al BLE del dispositivo movil*/</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <a class="code hl_variable" href="_proyecto_integrador_8c.html#a35034cac34d984afab665bfa6ca9da1a">bt_conectado</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>}</div>
+</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a00167e105bb327405201851ee2f14697"><div class="ttname"><a href="_proyecto_integrador_8c.html#a00167e105bb327405201851ee2f14697">valor_maximo</a></div><div class="ttdeci">uint16_t valor_maximo</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a05fc1d2a7b71765529581382d1cc65b7"><div class="ttname"><a href="_proyecto_integrador_8c.html#a05fc1d2a7b71765529581382d1cc65b7">valor_minimo</a></div><div class="ttdeci">uint16_t valor_minimo</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a1622f9310b9f2345c8e9494bd4851d13"><div class="ttname"><a href="_proyecto_integrador_8c.html#a1622f9310b9f2345c8e9494bd4851d13">VALOR_MAXIMO</a></div><div class="ttdeci">#define VALOR_MAXIMO</div><div class="ttdoc">Voltaje en milivolts correspondiente al ANGULO_MAXIMO. Se utiliza para el mapeo.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">ProyectoIntegrador.c:75</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a2e1a7462867b1802df1ea1a69d778427"><div class="ttname"><a href="_proyecto_integrador_8c.html#a2e1a7462867b1802df1ea1a69d778427">visualizacion_handle</a></div><div class="ttdeci">TaskHandle_t visualizacion_handle</div><div class="ttdef"><b>Definition</b> <a href="#l00085">ProyectoIntegrador.c:85</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a35034cac34d984afab665bfa6ca9da1a"><div class="ttname"><a href="_proyecto_integrador_8c.html#a35034cac34d984afab665bfa6ca9da1a">bt_conectado</a></div><div class="ttdeci">volatile bool bt_conectado</div><div class="ttdef"><b>Definition</b> <a href="#l00077">ProyectoIntegrador.c:77</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a3cfec38fc3a991df8ece334d4739d6b4"><div class="ttname"><a href="_proyecto_integrador_8c.html#a3cfec38fc3a991df8ece334d4739d6b4">ANGULO_MAXIMO</a></div><div class="ttdeci">#define ANGULO_MAXIMO</div><div class="ttdoc">Angulo maximo admisible para la articulacion del codo: 150 °. Se utiliza para el mapeo.</div><div class="ttdef"><b>Definition</b> <a href="#l00065">ProyectoIntegrador.c:65</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a3df1b4cad09974bfc68858fad7cdc054"><div class="ttname"><a href="_proyecto_integrador_8c.html#a3df1b4cad09974bfc68858fad7cdc054">CONFIG_BLINK_PERIOD</a></div><div class="ttdeci">#define CONFIG_BLINK_PERIOD</div><div class="ttdoc">Valor de tiempo (en milisegundos) para verificar el estado del BLE.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">ProyectoIntegrador.c:45</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a4b8b16a95a2b9f8e839bfcad9f8ec5ed"><div class="ttname"><a href="_proyecto_integrador_8c.html#a4b8b16a95a2b9f8e839bfcad9f8ec5ed">valor_medido</a></div><div class="ttdeci">uint16_t valor_medido</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a556100807b8faec82a4f0d0c95c8e4b4"><div class="ttname"><a href="_proyecto_integrador_8c.html#a556100807b8faec82a4f0d0c95c8e4b4">PERIODO_MUESTREO_AD</a></div><div class="ttdeci">#define PERIODO_MUESTREO_AD</div><div class="ttdoc">Valor de tiempo (en microsegundos) de muestreo para la conversion de analogico a digital.</div><div class="ttdef"><b>Definition</b> <a href="#l00055">ProyectoIntegrador.c:55</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="_proyecto_integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00180">ProyectoIntegrador.c:180</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a7a3ccd8a43b5c5e8a4d573780da1fd4a"><div class="ttname"><a href="_proyecto_integrador_8c.html#a7a3ccd8a43b5c5e8a4d573780da1fd4a">LED_BT</a></div><div class="ttdeci">#define LED_BT</div><div class="ttdoc">LED que permite visualizar el estado del BLE. LED apagado - BLE apagado, LED parpadeando - BLE descon...</div><div class="ttdef"><b>Definition</b> <a href="#l00050">ProyectoIntegrador.c:50</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_a7f078f7437f3692fe0cc01795d629ff3"><div class="ttname"><a href="_proyecto_integrador_8c.html#a7f078f7437f3692fe0cc01795d629ff3">angulo_maximo</a></div><div class="ttdeci">uint16_t angulo_maximo</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ab09faf663b135defba4a06bff5fd016c"><div class="ttname"><a href="_proyecto_integrador_8c.html#ab09faf663b135defba4a06bff5fd016c">angulo_minimo</a></div><div class="ttdeci">uint16_t angulo_minimo</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ab44918ab85570fe5c937672472e6d277"><div class="ttname"><a href="_proyecto_integrador_8c.html#ab44918ab85570fe5c937672472e6d277">ANGULO_MINIMO</a></div><div class="ttdeci">#define ANGULO_MINIMO</div><div class="ttdoc">Angulo minimo admisible para la articulacion del codo: 0 °. Se utiliza para el mapeo.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">ProyectoIntegrador.c:60</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ab56e1ff0f71e003f2e08c6ec294528b1"><div class="ttname"><a href="_proyecto_integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a></div><div class="ttdeci">void read_data(uint8_t *data, uint8_t length)</div><div class="ttdoc">Función a ejecutarse ante un interrupción de recepción a través de la conexión BLE.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">ProyectoIntegrador.c:93</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ac1d93d52499f0348b5dd06704bd288f0"><div class="ttname"><a href="_proyecto_integrador_8c.html#ac1d93d52499f0348b5dd06704bd288f0">angulo_medido</a></div><div class="ttdeci">uint16_t angulo_medido</div><div class="ttdef"><b>Definition</b> <a href="#l00082">ProyectoIntegrador.c:82</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ac730aa06c9b0b26a0ef7b2df237da191"><div class="ttname"><a href="_proyecto_integrador_8c.html#ac730aa06c9b0b26a0ef7b2df237da191">Visualizacion</a></div><div class="ttdeci">void Visualizacion()</div><div class="ttdoc">Permite hallar el angulo minimo y maximo, y tambien permite la visualizacion del angulo actual,...</div><div class="ttdef"><b>Definition</b> <a href="#l00132">ProyectoIntegrador.c:132</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ad25ff4470f47ee5251525e7931c29568"><div class="ttname"><a href="_proyecto_integrador_8c.html#ad25ff4470f47ee5251525e7931c29568">conversion_AD_handle</a></div><div class="ttdeci">TaskHandle_t conversion_AD_handle</div><div class="ttdef"><b>Definition</b> <a href="#l00084">ProyectoIntegrador.c:84</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ad792d6ebf2643acc666dec376efa83d7"><div class="ttname"><a href="_proyecto_integrador_8c.html#ad792d6ebf2643acc666dec376efa83d7">ConversionAD</a></div><div class="ttdeci">void ConversionAD()</div><div class="ttdoc">Permite la conversión analogica - digital, y tambien obtiene el angulo medido despues de realizar un ...</div><div class="ttdef"><b>Definition</b> <a href="#l00103">ProyectoIntegrador.c:103</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_ae997fb6cfda3d8ec7fc01761d5b246c6"><div class="ttname"><a href="_proyecto_integrador_8c.html#ae997fb6cfda3d8ec7fc01761d5b246c6">TimerADC</a></div><div class="ttdeci">void TimerADC(void *param)</div><div class="ttdoc">Funcion invocada en la interrupcion del timer A.</div><div class="ttdef"><b>Definition</b> <a href="#l00170">ProyectoIntegrador.c:170</a></div></div>
+<div class="ttc" id="a_proyecto_integrador_8c_html_aec5d238599332b11dd5ec4fbbc5b9edb"><div class="ttname"><a href="_proyecto_integrador_8c.html#aec5d238599332b11dd5ec4fbbc5b9edb">VALOR_MINIMO</a></div><div class="ttdeci">#define VALOR_MINIMO</div><div class="ttdoc">Voltaje en milivolts correspondiente al ANGULO_MINIMO. Se utiliza para el mapeo.</div><div class="ttdef"><b>Definition</b> <a href="#l00070">ProyectoIntegrador.c:70</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_840ce7523b0932d5abaf1b926f8f4cf5.html">Repositorio</a></li><li class="navelem"><a class="el" href="dir_cdd32e85384b092bba3ed1c26175bc2a.html">Beauchamps-1C-2024</a></li><li class="navelem"><a class="el" href="dir_a00c5a9728ad2f261de4b5b52be0d6f8.html">firmware</a></li><li class="navelem"><a class="el" href="dir_2fbcd39729f371cd7b942683335bcdd4.html">projects</a></li><li class="navelem"><a class="el" href="dir_8b0005ab9c2e6cb4b23fc1669bb30ac3.html">ProyectoIntegrador</a></li><li class="navelem"><a class="el" href="dir_f141b1e85e79c6e4bd3901b11739d87a.html">main</a></li><li class="navelem"><a class="el" href="_proyecto_integrador_8c.html">ProyectoIntegrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

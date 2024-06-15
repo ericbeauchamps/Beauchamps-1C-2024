@@ -11,7 +11,7 @@ set(srcs
     "microcontroller/src/i2c_mcu.c"
     "microcontroller/src/gpio_fast_out_mcu.c"
     "microcontroller/src/analog_io_mcu.c"
-    #"microcontroller/src/ble_mcu.c"
+    "microcontroller/src/ble_mcu.c"
     "microcontroller/src/rtc_mcu.c"
     "devices/src/led.c"
     "devices/src/switch.c"
@@ -27,6 +27,7 @@ set(srcs
     "devices/src/mpu6050.c"
     "devices/src/buzzer.c"
     "devices/src/ADXL335.c"
+    "devices/src/Prueba.c"
     )
 
 # Always included headers
