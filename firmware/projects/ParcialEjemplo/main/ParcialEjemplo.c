@@ -34,6 +34,7 @@
 #include "uart_mcu.h"
 #include "timer_mcu.h"
 #include "gpio_mcu.h"
+#include "Prueba.h"
 
 /*==================[macros and definitions]=================================*/
 #define RADIO 15 // No recuerdo bien el radio que dijo paco, yo supongo este
@@ -82,7 +83,7 @@ void Medicion()
 
 			if (estado_actual == true && estado_previo == false)
 			{
-				distancia_medida = distancia_medida + 4, 71; // la medición no va tener mucha exactitud pero se corrigen subiendo la cantidad de ranuras del disco
+				distancia_medida = distancia_medida + 4.71; // la medición no va tener mucha exactitud pero se corrigen subiendo la cantidad de ranuras del disco
 			}
 
 			estado_previo = estado_actual;
