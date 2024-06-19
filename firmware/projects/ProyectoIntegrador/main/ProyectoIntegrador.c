@@ -210,9 +210,11 @@ void app_main(void)
 		{
 		case BLE_OFF:
 			LedOff(LED_BT);
+			bt_conectado = pdFALSE;
 			break;
 		case BLE_DISCONNECTED:
 			LedToggle(LED_BT);
+			bt_conectado = false;
 			break;
 		case BLE_CONNECTED:
 			LedOn(LED_BT);
